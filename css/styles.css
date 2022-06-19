@@ -1,0 +1,215 @@
+/*Importing from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/*Reset*/
+html,
+body,
+ul,
+ol,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    background-color: #af0b03;
+    color: white;
+    padding: 2rem;
+    position: relative;
+}
+
+nav a,
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+input[type="submit"]{
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}
+
+/*Font-styling*/
+h2 {
+    font-family: 'Abel', sans-serif;
+    font-size: 2.6rem;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8rem;
+}
+
+a {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*Style for the logo*/
+.logo {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.5rem;
+    font-size: 3.5rem;
+    font-family: 'Abel', sans-serif;
+}
+
+
+/* Hiding the navigation for desktop */
+.desktop-nav {
+    display: none;
+}
+
+/*Styling the hamburger-menu for smaller devices*/
+.hamburger-menu {
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+/*The icon in the menu*/
+.hamburger-icon {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: block;
+    color: white;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+}
+
+/*The ul-list. Hiding it by default*/
+.nav-ul {
+    display: none;
+    padding-left: 0;
+    list-style-type: none;
+    width: 100vw;
+    position: relative;
+    top: 4rem;
+    background-color: #790700;
+}
+
+/*The li-elements in the hamburger-menu*/
+.nav-ul li {
+    display: block;
+    font-size: 3.5rem;
+    padding-top: 7rem;
+    text-align: center;
+}
+
+/*The links in the hamburger-menu when displayed*/
+.nav-ul.show {
+    display: block;
+    background-color: #790700;
+    height: 100vh;
+    margin-top: 2rem;
+}
+
+/*Searchbox*/
+.search input[type="text"] {
+    max-width: 70vw;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0 0 0 5px;
+    border: none;
+}
+
+.search {
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+}
+
+.search i {
+    font-size: 2.5rem;
+    background-color: white;
+    color: black;
+    margin-left: 0;
+}
+
+.search button {
+    max-width: 40px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 0 5px 0 0;
+}
+
+/*Registration-form*/
+
+#register {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f3ecec;
+}
+
+#register input[type="text"],
+#register input[type="email"],
+#register input[type="password"] {
+    max-width: 550px;
+    width: 100%;
+    margin: 0.5rem auto 2rem auto;
+    padding: 0.5rem;
+}
+
+#register textarea {
+    max-width: 550px;
+    height: 150px;
+    width: 100%;
+    margin: 0.5rem auto 2rem auto;
+    padding: 0.5rem;
+}
+
+label {
+    font-size: 1.8rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#register h2,
+#register p {
+    text-align: center;
+}
+
+#register input[type="submit"]{
+    display: block;
+    max-width: 200px;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 0.5rem;
+    background-color: #790700;
+    color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 2rem;
+}
+
+#register input[type="submit"]:hover{
+    background-color: #330300;
+}
+
+/*Footer*/
+footer{
+    background-color: #330300;
+}
+
+footer p{
+    color: white;
+}

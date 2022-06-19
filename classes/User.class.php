@@ -3,7 +3,7 @@
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-19 17:23:24 
  * @Last Modified by: Emma Forslund - emfo2102
- * @Last Modified time: 2022-06-19 17:43:41
+ * @Last Modified time: 2022-06-19 21:15:19
  */
 
 
@@ -80,6 +80,25 @@ class User
         }
     }
 
+
+    //Kontroll för att se om bloggnamnet och mailen finns
+    public function uniqueNames(string $blogname, string $email): bool
+    {
+        $blogname = $this->db->real_escape_string($blogname);
+        $email = $this->db->real_escape_string($email);
+
+        //SQL-fråga
+        $sql = "SELECT blogname, email FROM users WHERE blogname='$blogname' OR email='$email'";
+        $result = $this->db->query($sql);
+
+
+        if ($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //Method for registration
     public function registerUser($fname, $lname, $age, $info, $blogname, $email, $password)
     {
@@ -115,7 +134,7 @@ class User
         $info = strip_tags($info);
 
 
-        $sql = "INSERT INTO users(blogname, email, password, fname, lname, user_info, age) VALUES('$blogname', '$email', '$hashed_password', '$fname', '$lname', '$info', '$age')";
+        $sql = "INSERT INTO users(email, blogname, password, age, user_info, fname, lname) VALUES('$email', '$blogname', '$hashed_password', '$age', '$info', '$fname', '$lname')";
 
         $result = $this->db->query($sql);
 
