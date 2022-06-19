@@ -3,7 +3,7 @@
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-19 14:48:38 
  * @Last Modified by: Emma Forslund - emfo2102
- * @Last Modified time: 2022-06-19 17:19:53
+ * @Last Modified time: 2022-06-19 17:47:08
  */
 
 
@@ -37,7 +37,7 @@ CREATE TABLE posts(
     user_info TEXT,
     user_created timestamp NOT NULL DEFAULT current_timestamp(),
     fname VARCHAR(50),
-    ename VARCHAR(50));
+    lname VARCHAR(50));
 
     CREATE TABLE category(
     category_name VARCHAR(128) PRIMARY KEY NOT NULL,
