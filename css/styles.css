@@ -26,13 +26,17 @@ header {
     position: relative;
 }
 
+main{
+    padding: 1rem;
+}
+
 nav a,
 header a {
     text-decoration: none;
     color: white;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     font-size: 2rem;
     font-family: 'Ubuntu', sans-serif;
     cursor: pointer;
@@ -42,6 +46,11 @@ input[type="submit"]{
 h2 {
     font-family: 'Abel', sans-serif;
     font-size: 2.6rem;
+}
+
+h3 {
+    font-family: 'Abel', sans-serif;
+    font-size: 2.3rem;
 }
 
 p {
@@ -105,7 +114,7 @@ a {
 /*The li-elements in the hamburger-menu*/
 .nav-ul li {
     display: block;
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding-top: 7rem;
     text-align: center;
 }
@@ -188,12 +197,12 @@ label {
     text-align: center;
 }
 
-#register input[type="submit"]{
+input[type="submit"],
+#login-form a {
     display: block;
     max-width: 200px;
     width: 100%;
     margin: 4rem auto;
-    padding: 0.5rem;
     background-color: #790700;
     color: white;
     border: none;
@@ -201,15 +210,136 @@ label {
     padding: 2rem;
 }
 
-#register input[type="submit"]:hover{
+#login-form a {
+    text-align: center;
+    background-color: rgb(0, 0, 109);
+    text-decoration: none;
+}
+
+#login-form a:hover {
+    background-color: #000520;
+}
+
+#register input[type="submit"]:hover {
     background-color: #330300;
 }
 
 /*Footer*/
-footer{
+footer {
     background-color: #330300;
 }
 
-footer p{
+footer p {
     color: white;
+}
+
+/*Admin-page*/
+.userinfo {
+    background-color: #f3ecec;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+}
+
+.user {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#profilepic {
+    margin: auto;
+    background-color: #330300;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.user h3 {
+    margin: 4rem auto 0 auto;
+}
+
+/*  Login-form */
+
+#login-form {
+    background-color: #e3ebfa;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    display: block;
+    padding: 2rem;
+}
+
+/*Centering the text in the login-form*/
+#login-form h2,
+#login-form h3 {
+    text-align: center;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+    max-width: 550px;
+    width: 100%;
+    margin: 0.5rem auto 2rem auto;
+    padding: 0.5rem;
+}
+
+/*Create blogpost-page*/
+#admin-form {
+    padding: 2rem;
+    background-color: #fbf6f6;
+    max-width: 1100px;
+    width:100%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#admin-form h2 {
+    text-align: center;
+}
+
+#admin-form input[type="text"] {
+    max-width: 550px;
+    width: 100%;
+    margin: 0.5rem auto 2rem auto;
+    padding: 0.5rem;
+}
+
+#admin-form select {
+    max-width: 550px;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+
+.admin-main {
+    background-color: #f3ecec;
+}
+
+.admin-main h2 {
+    text-align: center;
+}
+
+.output-form {
+    text-align: center;
+    font-weight: bold;
+}
+
+.output-form i {
+    color: green;
+}
+
+.create-article {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 1rem;
+    margin-bottom: 4rem;
+
 }
