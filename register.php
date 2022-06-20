@@ -3,7 +3,7 @@
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-19 17:47:33 
  * @Last Modified by: Emma Forslund - emfo2102
- * @Last Modified time: 2022-06-19 21:12:30
+ * @Last Modified time: 2022-06-20 02:03:52
  */
 
 $page_title = "Skapa blogg";
@@ -17,7 +17,7 @@ if (isset($_POST['blogname'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $age = $_POST['age'];
-    $description = $_POST['description'];
+    $description= $_POST['info'];
 
     $register = new User();
     $success = true;
@@ -48,7 +48,7 @@ if (isset($_POST['blogname'])) {
     if ($register->uniqueNames($blogname, $email)) {
         $message = "<p class='error-message'> Användare finns redan </p>";
     } else {
-        if ($register->registerUser($email, $blogname, $password, $fname, $lname, $age, $description)) {
+        if ($register->registerUser($fname, $lname, $age, $description, $blogname, $email, $password)) {
             $message = "<p> Användare skapad </p>";
         } else {
             $message = "<p class='error-message'> Fel vid skapande av användare </p>";
@@ -131,8 +131,8 @@ if (isset($_POST['blogname'])) {
         ?>
 
         <!--Description-->
-        <label for="description">Beskrivning av blogg:</label><br>
-        <textarea name="description" id="description"></textarea>
+        <label for="info">Beskrivning av blogg:</label><br>
+        <textarea name="info" id="info"></textarea>
         <div class="error-js"></div>
         <?php
         //Skriver ut felmeddelande
