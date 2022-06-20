@@ -3,7 +3,7 @@
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-19 17:23:24 
  * @Last Modified by: Emma Forslund - emfo2102
- * @Last Modified time: 2022-06-19 21:15:19
+ * @Last Modified time: 2022-06-20 02:47:53
  */
 
 
@@ -139,5 +139,52 @@ class User
         $result = $this->db->query($sql);
 
         return $result;
+    }
+
+    //Metod för att logga in 
+    public function logIn(string $email, string $password): bool
+    {
+        $email = $this->db->real_escape_string($email);
+        $password = $this->db->real_escape_string($password);
+
+        $email = strip_tags($email);
+        $password = strip_tags($password);
+
+
+        //SQL-fråga
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $result = $this->db->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $stored_password = $row['password'];
+
+            //Kontrollerar det inmatade lösenordet mot det lagrade lösenordet
+            if (password_verify($password, $stored_password)) {
+                $_SESSION['email'] = $email;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    //Metod för att hämta info om den inloggade användaren
+    public function getUserInfo(): array
+    {
+
+        $sql = "SELECT * FROM users where email='" . $_SESSION['email'] . "'";
+
+        $result = mysqli_query($this->db, $sql);
+
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+    //Destruktor
+    function __destruct()
+    {
+        mysqli_close($this->db);
     }
 }
