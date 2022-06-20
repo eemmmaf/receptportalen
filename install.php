@@ -3,7 +3,7 @@
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-19 14:48:38 
  * @Last Modified by: Emma Forslund - emfo2102
- * @Last Modified time: 2022-06-19 17:47:08
+ * @Last Modified time: 2022-06-20 02:46:31
  */
 
 
@@ -17,7 +17,7 @@ if($db->connect_errno > 0) {
 }
 
 //SQL-query for installation
-$sql = "DROP TABLE IF EXISTS posts, users, category;";
+$sql = "DROP TABLE IF EXISTS posts, users, category, comment;";
 
 $sql .= "
 CREATE TABLE posts(
@@ -42,8 +42,17 @@ CREATE TABLE posts(
     CREATE TABLE category(
     category_name VARCHAR(128) PRIMARY KEY NOT NULL,
     category_description TEXT);
+
+    CREATE TABLE comment(
+        comment_id INT(11) PRIMARY KEY AUTO_INCREMENT,
+        comment_text TEXT,
+        email VARCHAR(60) NOT NULL,
+        comment_name VARCHAR(60));
     
 ALTER TABLE posts
+ADD FOREIGN KEY (email) REFERENCES users(email);
+
+ALTER TABLE comment
 ADD FOREIGN KEY (email) REFERENCES users(email);
 
 ALTER TABLE posts
